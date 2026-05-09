@@ -27,7 +27,7 @@ public class JwtMiddleware
             if (!string.IsNullOrEmpty(header) && header.StartsWith("Bearer ", StringComparison.OrdinalIgnoreCase))
             {
                 var token = header.Substring("Bearer ".Length).Trim();
-
+                // validate claims
                 var validatedPrincipal = ValidateToken(token);
                 if (validatedPrincipal != null)
                 {

@@ -49,6 +49,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // Token service
 builder.Services.AddSingleton<ITokenService, TokenService>();
+// Permission service
+builder.Services.AddScoped<PermissionService>();
 
 var app = builder.Build();
 
